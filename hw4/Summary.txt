@@ -1,0 +1,55 @@
+
+Author tags found: [Yu-Pin Liang, COM S 227 Section C, Yu-Pin Liang, COM S 227 Section C, Yu-Pin Liang, COM S 227 Section C, Yu-Pin Liang, COM S 227 Section C] (in PlayerCharacter.java, Robot.java, SmartRobot.java, Tableau.java)
+
+
+
+
+Summary: COM S 227 Assignment 4 Fall 2020
+-----------------------------------------
+Name          Points    Exceptions
+----------------------------------
+HW #4 Tests   69/100    0
+----------------------------------
+Total         69/100    0
+
+
+---------------
+Test Suite:  HW #4 Tests
+
+Description: Tests of PlayerCharacter, Robot, SmartRobot, and Tableau classes.
+---------------
+   : Class does not conform to specification
+   : Given a Tableau t on level s with n Robots, after calling getHit(t, ...) on every Robot in t, t.getScore() should equal n*s.
+   : Given a Tableau t containing ArrayList<Robot> robots, for every Robot robot in robots after calling robot.getHit(t, ...), an Object of the Obstruction class should be returned.
+   : Given a Tableau t containing ArrayList<Robot> robots, for every Robot robot in robots after calling robot.getHit(t, ...), a Cell with the same coordinates as the corresponding robot should be returned.
+   : The moveTo(Tableau) method of the Robot class should conform to its specification.
+   : After initializing PlayerCharacter player, then calling player.getZapped(), player.isAlive() should return false.
+   : After initializing PlayerCharacter player, then player.die(), player.isAlive() should return false.
+   : A Tableau should only begin waiting if there are no SmartRobots; after beginning waiting, a game is sure to come to a stand still eventually.
+   : Given PlayerCharacter player = new PlayerCharacter(int i1, int i2), player.getX() should return i1 and player.getY() should return i2.
+   : Given PlayerCharacter player = new PlayerCharacter(int, int), player.isAlive() should return true.
+   : Class does not conform to specification
+   : Given a Tableau t with Robot r, r.collideWith(null, t) should return r (i.e., collideWith(Cell, Tableau) should have 'return this'.
+   : Given a Tableau t with Robot r and Obstruction o, r.collideWith(o, t) should return o, unless r is an ExplodingRobot which should return null.
+   : Given a Tableau t at level s with Robot r and Obstruction o, after r.collideWith(o, t) t.getScore() should increase by s.
+   : Given a Tableau t with Robot r and ExplodingRobot e, r.collideWith(e, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null.
+        : Failed Test: Given a Tableau t with Robot r and ExplodingRobot e, r.collideWith(e, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null. expected:<[#]> but was:<[null]>
+   : Given a Tableau t with Robot r and SmartRobot s, r.collideWith(s, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null.
+        : Failed Test: Given a Tableau t with Robot r and SmartRobot s, r.collideWith(s, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null. expected:<[#]> but was:<[null]>
+   : Given a Tableau t with Robot r and PlayerCharacter p, r.collideWith(p, t) should return the Robot, unless the Robot is an ExplodingRobot which returns null.
+        : Failed Test: Given a Tableau t with Robot r and PlayerCharacter p, r.collideWith(p, t) should return the Robot, unless the Robot is an ExplodingRobot which returns null. expected:<[null]> but was:<[@]>
+   : Given a Tableau t with Robot r and FastRobot f, r.collideWith(f, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null.
+        : Failed Test: Given a Tableau t with Robot r and FastRobot f, r.collideWith(f, t) should return an Obstruction with the same coordinates as r, unless r is an ExplodingRobot which should return null. expected:<[#]> but was:<[null]>
+   : Class does not conform to specification
+   : The moveTo(Tableau) method of the SmartRobot class should conform to its specification (e.g., it cannot collideWith anything when it moves, except the player; if it cannot move without colliding with something, it gets stuck).
+   : MISSING CLASS
+   : Class does not conform to specification
+---------------
+Tests Passed:       18/22
+Exceptions Thrown:  0
+Score:              18/26
+Scaled Score:       69/100
+---------------
+
+
+

@@ -1,0 +1,75 @@
+
+Author tags found: [Yu-Pin Liang, COM S 227 Section C, Yu-Pin Liang, COM S 227 Section C] (in Cell.java, Life.java)
+
+
+
+
+Summary: COM S 227 Assignment 3 Fall 2020
+-----------------------------------------
+Name                 Points    Exceptions
+-----------------------------------------
+Game of Life tests   80/80     0
+-----------------------------------------
+Total                80/80     0
+
+
+---------------
+Test Suite:  Game of Life tests
+
+Description: Tests of Cell and Life classes.
+---------------
+   : Given an initialized Cell cell and ArrayList<Cell> cells with n Cell elements, m <= n of which are alive, after cell.setNeighbors(cells) cell.getNumAliveNeighbors() should return m.
+   : Given Cell cell = new Cell(false, ...) cell.toString() should return "0".
+   : Given Cell cell = new Cell(true, ...) cell.toString() should return "1".
+   : Given Cell cell = new Cell(false, ...), cell.isAlive() should be false.
+   : Given Cell cell = new Cell(true, ...), cell.isAlive() should be true.
+   : Given Cell cell = new Cell(..., ints), cell.getSurviveRule() should be ints.
+   : Given Cell cell = new Cell(..., ints, ...), cell.getBornRule() should be ints.
+   : Given Life life = new Life(gird, ...) and grid[r].charAt(c) is '0' for some appropriate r and c, life.getCell(r, c).isAlive() should be false.
+   : Given Life life = new Life(grid, ...), every cell in life should have its life/death initialized corresponding to grid.
+   : Given an initialized Cell cell and ArrayList<Cell> cells with n Cell elements, after cell.setNeighbors(cells) cell.getNumNeighbors() should return n.
+   : Given the default rule b3/s23 and a blinker setup, the blinker should oscillate with period 2.
+   : Given the rule b0s0, an empty board should oscillate with period 2 between an empty board and a full board
+   : Given the default rule b3s23, the 'grey counter' should oscillate with period 4 in a known pattern
+   : Given rule b2s0, a 'moon' should glide in a straight line
+   : Given File file has r lines and Life life = new Life(file, ...), life.getRows() should equal r.
+   : Given any line in File file has c 1's and 0's and Life life = new Life(file, ...), life.getColumns() should equal c.
+   : Given Life life = new Life(File, born, ...) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getBornRule() should match born.
+   : Given Life life = new Life(File, ..., survive) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getSurviveRule() should match survive.
+   : Given Life life = new Life(file, ...) and the cth 1 or 0 on the rth line of file is '1' for some appropriate r and c, life.getCell(r, c).isAlive() should be true.
+   : Given Life life = new Life(file, ...) and the cth 1 or 0 on the rth line of file is '0' for some appropriate r and c, life.getCell(r, c).isAlive() should be false.
+   : Given Life life = new Life(file, ...), every cell in life should have its life/death initialized corresponding to file.
+   : Class does not conform to specification
+   : Class does not conform to specification
+   : Given String[] grid has r rows and Life life = new Life(grid, ...), life.getRows() should equal r.
+   : Given String grid[i], for all relevant i, has c 1's and 0's and Life life = new Life(grid, ...), life.getColumns() should equal c.
+   : Given String[] grid has r rows and Life life = new Life(grid, ...), life.getRows() should equal r.
+   : Given String grid[i], for all relevant i, has c 1's and 0's and Life life = new Life(grid, ...), life.getColumns() should equal c.
+   : Given Life life = new Life(String[], born, ...) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getBornRule() should match born.
+   : Given Life life = new Life(String[], ..., survive) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getSurviveRule() should match survive.
+   : Given Life life = new Life(String[], ..., survive) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getSurviveRule() should match survive.
+   : Given Life life = new Life(String[], born, ...) and Cell cell = life.getCell(r, c) for some relevant r and c, cell.getBornRule() should match born.
+   : Given Life life = new Life(gird, ...) and grid[r].charAt(c) is '1' for some appropriate r and c, life.getCell(r, c).isAlive() should be true.
+   : Given Cell cell = new Cell(false, ints, ...) and ArrayList<Cell> cells with n Cell elements, all alive, after cell.setNeighbors(cells) and cell.setIsAliveNextGeneration(), cell.isAliveAfterNextGeneration() should return true if and only if ints contains n.
+   : Given Cell cell = new Cell(true, ..., ints) and ArrayList<Cell> cells with n Cell elements, all alive, after cell.setNeighbors(cells) and cell.setIsAliveNextGeneration(), cell.isAliveAfterNextGeneration() should return true if and only if ints contains n.
+   : MISSING CLASS
+   : Given Cell cell = new Cell(false, ints, ...) and ArrayList<Cell> cells with n Cell elements, all alive, after cell.setNeighbors(cells), cell.setIsAliveNextGeneration(), and cell.nextGeneration(), cell.isAlive() should return true if and only if ints contains n.
+   : Given Cell cell = new Cell(true, ..., ints) and ArrayList<Cell> cells with n Cell elements, all alive, after cell.setNeighbors(cells), cell.setIsAliveNextGeneration(), and cell.nextGeneration(), cell.isAlive() should return true if and only if ints contains n.
+   : Given String[] grid = {"0 0 0", "0 1 1", "0 1 1"} and Life life = new Life(grid, ...), life.getCell(1, 1).getNumNeighbors() should be 8.
+   : Given String[] grid = {"0 0 0", "0 1 1", "0 1 1"} and Life life = new Life(grid, ...), life.getCell(1, 1).getNumAliveNeighbors() should be 3.
+   : Given String[] grid = {"0 0", "0 0"} and Life life = new Life(grid, ...), life.getCell(0, 0).getNumNeighbors() should be 3.
+   : A Cell on the edge of a rectangular board (not corner) should have five neighbors.
+   : If a Cell has a single alive neighbor, that a call ot getNumAliveNeighbors should return 1.
+   : Given String[] grid = {"0 0 0 0 0 0", "0 0 0 0 0 0", "0 0 1 1 0 0", "0 0 1 1 0 0", "0 0 0 0 0 0", "0 0 0 0 0 0"}, Life life = new Life(grid, born1, survive1), and String ini = life.toStirng(), after life.nextGeneration() ini should match life.toString().
+   : Given String[] grid = {"0 0 0 0 0 0 0 0", "0 0 0 0 0 0 0 0", "0 0 0 0 1 0 0 0", "0 0 0 1 0 1 0 0", "0 0 0 1 0 1 0 0", "0 0 0 0 1 0 0 0", "0 0 0 0 0 0 0 0", "0 0 0 0 0 0 0 0"}, Life life = new Life(grid, born1, survive1), and String ini = life.toStirng(), after life.nextGeneration() ini should match life.toString().
+   : Given String[] grid1 = {"0 0 0 0 0", "0 0 1 0 0", "0 0 1 0 0", "0 0 1 0 0", "0 0 0 0 0"}, String[] grid2 = {"0 0 0 0 0", "0 0 0 0 0", "0 1 1 1 0", "0 0 0 0 0", "0 0 0 0 0"}, Life life1 = new Life(grid1, born1, survive1), and Life life2 = new Life(grid2, ...), after life1.nextGeneration() life2.toString() should match life1.toString().
+   : Given String[] empty = {"0 0 0", "0 0 0", "0 0 0"}, String[] full = {"1 1 1", "1 1 1", "1 1 1"}, Life life1 = new Life(empty, new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}), and Life life2 = new Life(full, ...), after life1.nextGeneration() life2.toString() should match life1.toString().
+---------------
+Tests Passed:       46/46
+Exceptions Thrown:  0
+Score:              75/75
+Scaled Score:       80/80
+---------------
+
+
+
