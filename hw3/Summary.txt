@@ -1,0 +1,174 @@
+ _____                             _              _____      _                       _____  _____  ______
+/  __ \                           | |            /  ___|    (_)                     / __  \/ __  \|___  /
+| /  \/ ___  _ __ ___  _ __  _   _| |_ ___ _ __  \ `--.  ___ _  ___ _ __   ___ ___  `' / /'`' / /'   / / 
+| |    / _ \| '_ ` _ \| '_ \| | | | __/ _ \ '__|  `--. \/ __| |/ _ \ '_ \ / __/ _ \   / /    / /    / /  
+| \__/\ (_) | | | | | | |_) | |_| | ||  __/ |    /\__/ / (__| |  __/ | | | (_|  __/ ./ /___./ /___./ /   
+ \____/\___/|_| |_| |_| .__/ \__,_|\__\___|_|    \____/ \___|_|\___|_| |_|\___\___| \_____/\_____/\_/    
+                      | |                                                                              
+_________                      ___________              .__                              
+\_   ___ \_____ ___  __ ____   \_   _____/__  _________ |  |   ___________   ___________ 
+/    \  \/\__  \\  \/ // __ \   |    __)_\  \/  /\____ \|  |  /  _ \_  __ \_/ __ \_  __ \
+\     \____/ __ \\   /\  ___/   |        \>    < |  |_> >  |_(  <_> )  | \/\  ___/|  | \/
+ \______  (____  /\_/  \___  > /_______  /__/\_ \|   __/|____/\____/|__|    \___  >__|   
+        \/     \/          \/          \/      \/|__|                           \/       
+
+
+ TA Name: Katelyn Lamison <klamison@iastate.edu>
+ Office Hours: T 2–3 
+
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║ Additional Feedback:									║
+╟───────────────────────────────────────────────────────────────────────────────────────╢
+
+Great job on this second assignment, Yu Pin! Your code solved the problems well. One thing
+to try to work on for the future is to make your code shorter and simpler so it is easy to 
+read and debug. Think about the move and jump methods. The 4 direction cases are all really 
+similar. How could you rewrite these to make it simpler or using a helper method?
+Keep up the good work!									
+ 							 				
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║ Total Points: 198/200			Punctuality: Early (+5%) 188 * 1.05 = 198	║
+╟───────────────────────────────────────────────────────────────────────────────────────╢
+║ 4/5	Javadoc				19/20	Style, submission, spec conformance	║
+║ 70/75	Unit tests			95/100	Code check				║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
+
+
+Java Docs
++------+---------------------------------------------------------------------------------------------------------+
+       | -Missing Javadoc comments on instance variables											 
++------+---------------------------------------------------------------------------------------------------------+
+| 4    | TOTAL of 5                                                                                            
++------+---------------------------------------------------------------------------------------------------------+
+
+
+Style, submission, spec conformance
++------+---------------------------------------------------------------------------------------+
+       | -Use camelCase for variable names. For example, instead of currenttime, use currentTime
+	-look at your hasWon() method. You can actually make it much simpler by just doing:
+	return (currentmap.getCellStatus(currentlocation)) == EXIT); (-1)     
+	-generally if you want to start with an empty string, try to use = "" instead of = null 	       								       
++------+---------------------------------------------------------------------------------------+
+  19   | TOTAL of 20                                                                           
++------+---------------------------------------------------------------------------------------+
+
+CODE CHECK
+7/7 Variables
+----------------------------
+	Has the final MAX_ENERGY 
+	Has the following basic instance variables
+		matches
+		foodItems
+		Map
+		Clock
+		Energy
+		location
+
+
+20 Constructors
+----------------------------
+6/6 First Constructor Initializes:
+	map;
+	clock;
+	energy;
+	foodItems;
+	matches;
+	location;
+
+7/7 Second Constructor Initializes:
+	location;
+	Map;
+	clock = 100;
+	energy = MAX_ENERGY;
+	foodItems = 1;
+	matches = 10;
+	map.mark(location, Status.PlAYER);
+
+7/7 Third Constructor Initializes:
+	map;
+	location = map.getRandomOpenLocation(r);
+	clock = 100;
+	foodItems = 1;
+	matches = 10;
+	map.mark(location, Status.PlAYER);
+
+
+Methods
+----------------------------
+5/5 checkResource​()
+	(1) Decrease energy by 1
+	(1) Decrease clock by 1
+	(3) Return resource list only for resources that are still available
+
+6/6 eat​()
+	(1) Consumes one food item
+	(1) Increases the energy by 10
+	(2) Ensure energy does not surpass MAX_ENERGY
+	(2) The clock goes down by 1 even if no food was consumed
+
+1/1 - getClock​() Returns the instance variable for clock
+
+1/1 - getEnergy​() Returns the instance variable for energy
+
+1/1 - getFoodItems​() Returns Instance Variable for foodItems
+
+1/1 - getLocation​() Returns Instance Variable for location
+
+1/1 getMap​() Returns Instance Variable for map
+
+1/1 getMatches​() Returns Instance variable for matches
+
+1/1 hasJacket​() Returns Instance variable for Jacket
+
+1/1 hasKey​() Returns instance variable for key
+
+2/2 hasWon​() - Has a way to check if the status of the current location is EXIT
+
+3/3 isAlive​()
+	Checks clock is not ZERO
+	Checks energy is not ZERO
+	Returns the AND between these two
+
+12/14 jump​(Direction d)
+	(2) Reduce the energy by 25 and clock reduces by 1
+		-clock is not decrementing in all cases (-1)
+	(2) Check that the player cannot jump over WALL or DOOR
+	(2) Checks that energy is greater than 75 and when energy is greater than 50
+	(2) Check if the player has a key when the player lands on a DOOR
+	(2) Checks if the energy is less than 50, does the logic as the move method but consumes more energy
+		- you have ( (PIT || WATER) && !jacket) but it should be (PIT || (WATER && !jacket)) (-1)
+	(2) Changes the current cell location to MARK if current cell location is PLAYER
+	(2) Change the status of new location to PLAYER if it was OPEN or MARK
+
+9/10 look​(Direction d)
+	(2) Reduce the clock and energy by 1 each
+		-should do this even if darkness (-1)
+	(1) Check if no match is available, then return DARKNESS
+	(2) Reduce matches by 1 if any match is left
+	(4) Get the next location to look
+	(1) Return the status of the next location
+
+13/15 move​(Direction d)
+	(2) Checks if the move FAILS if the next location is a WALL or its DOOR and does not have key
+	(2) Reduce energy and clock by 1 each even if a move fails
+		-should not use a match (-1)
+	(2) Check if the current location is PLAYER and set as MARK
+	(3) Check if the new Location is OPEN or mark and set as PLAYER
+	(3) Set energy to zero if the new location is PIT or the new location is WATER and the player has no jacket
+		- you have ( (PIT || WATER) && !jacket) but it should be (PIT || (WATER && !jacket)) (-1)
+	(3) Check if new Location is WATER and Set food and matches to half of their current values
+
+6/6 pickUp​()
+	(1) Picks up a KEY if the status of the current location is KEY
+	(1) Picks up a jacket if the current location is a JACKET
+	(1) Adds 1 more food if the current location is FOOD
+	(2) Picks up 20 Matches if the current location is MATCH
+	(1) Mark the current location as PLAYER
+
+4/4 rest​()
+	(1) Increase energy by 10
+	(2) Check that energy is not greater than MAX_ENERGY
+	(1) Reduce clock by 10
+

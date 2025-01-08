@@ -1,0 +1,132 @@
+
+Author tags found: [Yu-Pin Liang, COM S 227 Section C] (in CaveExplorer.java)
+
+
+
+
+Summary: COM S 227 Assignment 2 Spring 2020
+-------------------------------------------
+Name                      Points    Exceptions
+----------------------------------------------
+CaveExplorerTests tests   70/75     0
+----------------------------------------------
+Total                     70/75     0
+
+
+---------------
+Test Suite:  CaveExplorerTests tests
+
+Description: Tests of CaveExplorer class.
+---------------
+   : The String (new CaveExplorer(new Map(GameMain.MAP1), Location)).checkResource() should not be empty.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up macthes, the player's location should innitially read PlAYER, then after moving it should give MATCHES, then after pickUp() it should read PlAYER, and also the CaveExplorer's original position should be MARK.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up food, the player's location should initially read PlAYER, then after moving it should give FOOD, then after pickUp() it should read PlAYER, and also the CaveExplorer's original position should be MARK.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up key, the player's location should initially read PlAYER, then after moving it should give KEY, then after pickUp() it should read PlAYER, and also the CaveExplorer's original position should be MARK.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up jacket, the player's location should initially read PlAYER, then after moving it should give JACKET, then after pickUp() it should read PlAYER, and also the CaveExplorer's original position should be MARK.
+   : Jumping into water from any direction from any distance should half matches and foodItems even with a jacket on.
+        : Failed Test: arrays first differed at element [0][0][0][0][0]; expected:<6> but was:<5>
+   : move(Direction) should always decrease energy by 1 unless you move into a pit or water when it should be set to 0
+   : move(Direction) should always decrease time by 1 unless you move into a pit or water when it should be set to 0
+   : move(Direction) should update location according to the specification
+   : jump(Direction) should update location according to the specification
+   : jump(Direction) should expend energy according to the specification
+   : The String (new CaveExplorer(new Map(GameMain.MAP1), Location)).checkResource() should not be null.
+   : jump(Direction) should expend food according to the specification
+   : jump(Direction) should expend food according to the specification
+   : jump(Direction) should update the map according to the specification
+        : Failed Test: arrays first differed at element [0][0][9][0]; expected:<PlAYER> but was:<MARK>
+   : Given space, time, and energy, move(Direction) twice and jump(Direction) thrice should update the location by 8 spaces
+   : Moving onto a location with MARK as its Status should change its value to PlAYER
+   : Moving onto a location with MARK as its Status should change the CaveExplorer's original Location's Status to MARK
+   : Jumping onto a location with MARK as its Status should change its value to PlAYER
+        : Failed Test: expected:<PlAYER> but was:<MARK>
+   : Jumping onto a location with MARK as its Status should change the CaveExplorer's original Location's Status to MARK
+   : After starting with 12 matches and looking in all directions twice, matches should be decreased by one each time.
+   : checkResource() should decrease clock by one.
+   : checkResource() should decrease energy by one.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up macthes, matches should read 10, 10, and 30 matches respectively.
+        : Failed Test: arrays first differed at element [1]; expected:<10> but was:<9>
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up food, foodItems should read 1, 1, and 2 foodItems respectively.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up the key, key should read false, false, and true respectively.
+   : With new CaveExplorer(Map, Location) starting next to, moving onto, and then picking up the jacket, jcaket should read false, false, and true respectively.
+   : With CaveExplorer exp = new CaveExplorer(Map, int 0, int, int, int, Location), exp.isAlive() should return false.
+   : With CaveExplorer exp = new CaveExplorer(Map, int, int 0, int, int, Location), exp.isAlive() should return false.
+   : Given CaveExplorer exp, with exp.hasJacket() returning false, after moving to a Location with status WATER, exp.isAlive() should return false.
+   : Given CaveExplorer exp, with exp.hasJacket() returning true, after moving to a Location with status WATER, exp.isAlive() should return true.
+   : Given CaveExplorer exp, after moving to a Location with status PIT, exp.isAlive() should return false.
+   : Map for CaveExplorer(new Map(GameMain.MAP1), Location) not initialized correctly.
+   : int foodItems = 3 for CaveExplorer(Map, int, int, int foodItems, int, Location) not initialized correctly.
+   : int foodItems = 5 for CaveExplorer(Map, int, int, int foodItems, int, Location) not initialized correctly.
+   : int clock for CaveExplorer(Map, Location) not initialized correctly.
+   : int energy for CaveExplorer(Map, Location) not initialized correctly.
+   : int foodItems for CaveExplorer(Map, Location) not initialized correctly.
+   : int matches for CaveExplorer(Map, Location) not initialized correctly.
+   : int clock for CaveExplorer(Map, Random) not initialized correctly.
+   : int energy for CaveExplorer(Map, Random) not initialized correctly.
+   : int foodItems for CaveExplorer(Map, Random) not initialized correctly.
+   : int matches for CaveExplorer(Map, Random) not initialized correctly.
+   : Map for CaveExplorer(new Map(GameMain.LARGE), Location) not initialized correctly.
+   : Location for CaveExplorer(Map, new Location(1, 1)) not initialized correctly.
+   : Location for CaveExplorer(Map, new Location(1, 2)) not initialized correctly.
+   : Map for CaveExplorer(GameMain.MAP1, Random) not initialized correctly.
+   : Location for CaveExplorer(GameMain.MAP1, new Random()) not initialized correctly.
+   : Location for CaveExplorer(new Map(new String[] {"###", "# #", "###"}), new Random()) should be exactly (1, 1).
+   : int matches = 3 for CaveExplorer(Map, int, int, int, int matches, Location) not initialized correctly.
+   : int matches = 5 for CaveExplorer(Map, int, int, int, int matches, Location) not initialized correctly.
+   : int clock = 3 for CaveExplorer(Map, int clock, int, int, int, Location) not initialized correctly.
+   : int clock = 5 for CaveExplorer(Map, int clock, int, int, int, Location) not initialized correctly.
+   : int energy = 3 for CaveExplorer(Map, int, int energy, int, int, Location) not initialized correctly.
+   : int energy = 5 for CaveExplorer(Map, int, int energy, int, int, Location) not initialized correctly.
+   : With Map map = new Map(GameMain.MAP1), CaveExplorer exp = new CaveExplorer(map, new Location (5, 1)), map.getCellStatus(new Location(5, 1)) should return String "PlAYER".
+   : With Map map = new Map(GameMain.MAP1), CaveExplorer exp = new CaveExplorer(map, new Location (5, 1)), exp.move(Direction.EAST), map.getCellStatus(new Location(5, 1)) should return String "MARK".
+   : With Map map = new Map(GameMain.MAP1), CaveExplorer exp = new CaveExplorer(map, new Location (5, 1)), exp.move(Direction.EAST), map.getCellStatus(new Location(5, 2)) should return String "PlAYER".
+   : hasKey() for CaveExplorer(new Map(GameMain.MAP1), new Location(1, 1)) should return false.
+   : isAlive() for CaveExplorer(new Map(GameMain.MAP1), new Location(1, 1)) should return true.
+   : hasJacket() for CaveExplorer(new Map(GameMain.MAP1), new Location(1, 1)) should return false.
+   : hasWon() for CaveExplorer(new Map(GameMain.MAP1), new Location(5, 5)) should return false.
+   : MISSING CLASS
+   : Class does not conform to specification
+   : Given int matches > 0, after exp.Look(Direction) int matches should be decremented.
+   : Given energy > 0, after calling move(Direction) energy should be decremented.
+   : Given time > 0, after calling move(Direction) clock should be decremented.
+   : Given energy > 0, after calling checkResource() energy should be decremented.
+   : Given time > 0, after calling checkResource() clock should be decremented.
+   : After calling pickUp() energy should not be decremented.
+   : After calling pickUp() clock should not be decremented.
+   : After calling eat() clock should be decremented.
+   : After calling eat() with no food, energy should not be changed.
+   : Given foodItems > 0, MAX_ENERGY - 10 >= energy, after calling eat() energy should increase by 10.
+   : Given foodItems > 0, MAX_ENERGY >= energy > MAX_ENERGY - 10, after calling eat() energy should be set to MAX_ENERGY.
+   : Given int matches = 0, after exp.Look(Direction) int matches should be 0.
+   : Given MAX_ENERGY - 10 >= energy, after calling rest() energy should increase by 10.
+   : Given MAX_ENERGY >= energy > MAX_ENERGY - 10, after calling rest() energy should be set to MAX_ENERGY.
+   : After calling rest() clock should be decreased by 10.
+   : If jump(Direction) has an obstacle within jumping distance location should not update.
+   : If jump(Direction) has an obstacle within jumping distance location should not update.
+   : If jump(Direction) has an obstacle within jumping distance location should not update.
+   : If jump(Direction) has an obstacle within jumping distance location should not update.
+   : Given 100 >= energy >= 75 and three clear spaces in Direction d, jump(d) should update location by three spaces in Direction d.
+   : Given 75 > energy >= 50 and two clear spaces in Direction d, jump(d) should update location by two spaces in Direction d.
+   : Given 50 > energy and one clear space in Direction d, jump(d) should update location by one space in Direction d.
+   : Given int foodItems > 0, exp.eat() int foodItems should be decremented.
+   : Given energy >= 25, jump(d) should decrement energy by 25.
+   : Given 25 > energy, jump(d) should set energy to 0.
+   : Attempting to walk into a location with status WALL should not update location.
+   : Attempting to walk into a location with status WALL should decrement energy.
+   : Walking into a location with status WATER should int divide matches by 2.
+   : Walking into a location with status WATER should int divide food by 2.
+   : Given int foodItems = 0, after exp.eat() int foodItems should be 0.
+   : After pickUp() on a location with status FOOD getFoodItems() should increase by 1.
+   : After pickUp() on a location with status MATCH getMatches() should increase by 20.
+   : After pickUp() on a location with status KEY hasKey() should return true.
+   : After pickUp() on a location with status JACKET hasJacket() should return true.
+   : After a successful move(Direction) getLocation() should return an updated position.
+---------------
+Tests Passed:       95/99
+Exceptions Thrown:  0
+Score:              123/131
+Scaled Score:       70/75
+---------------
+
+
+
