@@ -1,0 +1,37 @@
+package lab3;
+
+public class RabbitModel {
+	private int size;
+    private int years;
+	  public RabbitModel()
+	  {
+		  
+	    size = 0;
+	    years = 0;
+	 
+	  }  
+	 
+
+
+	  public int getPopulation()
+	  {
+		return size;
+	  }
+	  
+
+
+	  public void simulateYear()
+	  {
+		 years = years +1; 
+		  size= years%5;
+		  
+	  }
+	  
+
+
+	  public void reset()
+	  {
+	    size = 0;
+	    years = 0;
+	  }
+}

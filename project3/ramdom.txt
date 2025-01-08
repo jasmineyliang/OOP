@@ -1,0 +1,38 @@
+package lab3;
+import java.util.Random;
+
+public class RabbitModel {
+	private int size;
+    private int years;
+	  public RabbitModel()
+	  {
+		  
+	    size = 0;
+	    years = 0;
+	 
+	  }  
+	 
+
+
+	  public int getPopulation()
+	  {
+		return size;
+	  }
+	  
+
+
+	  public void simulateYear()
+	  {
+		 
+		
+			Random rand = new Random();
+		  size = size + rand.nextInt(10);
+	  }
+	  
+
+
+	  public void reset()
+	  {
+	    size = 0;
+	  }
+}
